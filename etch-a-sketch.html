@@ -7,12 +7,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="container" class="contenu"></div>
+    <div class="button-container">
+        <button id="restart">New Sketch</button>
+    </div>
+    <div id="container"></div>
+
     <script>
         const container = document.getElementById('container');
+        const restart = document.getElementById('restart');
+        restart.addEventListener('click',givePrompt);
 
-        const numberOfTimesToAdd = 256;
-        for (let i = 0; i < numberOfTimesToAdd; i++) {
+        const numberOfSquares = 256;
+        for (let i = 0; i < numberOfSquares; i++) {
             const grid = document.createElement('div');
             grid.classList.add("square");
 
@@ -23,6 +29,13 @@
         container.appendChild(grid);
         }
 
+
+        function givePrompt() {
+            let userInput = prompt("Please enter a number:");
+            let userNumber = parseInt(userInput);
+            numberOfGrids =  userNumber * userNumber;
+            return numberOfGrids;
+        }
 
     </script>
 </body>
