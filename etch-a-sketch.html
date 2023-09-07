@@ -9,16 +9,18 @@
 <body>
     <div id="container" class="contenu"></div>
     <script>
-        const grid = document.createElement('div');
         const container = document.getElementById('container');
-
-        grid.classList.add("square");
 
         const numberOfTimesToAdd = 256;
         for (let i = 0; i < numberOfTimesToAdd; i++) {
-        const clonedGrid = grid.cloneNode(true);
+            const grid = document.createElement('div');
+            grid.classList.add("square");
 
-        container.appendChild(clonedGrid);
+            grid.addEventListener('click', function () {
+            grid.style.backgroundColor = 'black';
+            });
+
+        container.appendChild(grid);
         }
 
 
