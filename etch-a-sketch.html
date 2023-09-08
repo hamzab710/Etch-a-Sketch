@@ -17,7 +17,7 @@
         const restart = document.getElementById('restart');
         restart.addEventListener('click',givePrompt);
 
-        const numberOfSquares = 256;
+        const numberOfSquares = 10000;
         for (let i = 0; i < numberOfSquares; i++) {
             const grid = document.createElement('div');
             grid.classList.add("square");
@@ -36,6 +36,21 @@
             numberOfGrids =  userNumber * userNumber;
             return numberOfGrids;
         }
+
+        // Function to update the square width
+        function updateSquareWidth(newWidth) {
+            container.style.setProperty('--square-width', newWidth);
+        }
+        
+        function squareRoot(number) {
+            if (number < 0) {
+                return "Invalid input: Cannot calculate the square root of a negative number.";
+            } else {
+                return Math.sqrt(number);
+            }
+        }
+        // Usage: Change the square width to 8%
+        updateSquareWidth(`${100 / squareRoot(numberOfSquares)}%`);
 
     </script>
 </body>
