@@ -8,19 +8,39 @@
 </head>
 <body>
     <div class="button-container">
-        <button id="restart">New Sketch</button>
+        <button id="restart">Change dinensions</button>
+        <button id="clear">Clear</button>
     </div>
     <div id="container"></div>
 
     <script>
         const container = document.getElementById('container');
         const restart = document.getElementById('restart');
+        const clear = document.getElementById('clear');
+
+
+        clear.addEventListener('click',function () {
+            const grid = document.querySelectorAll('.square');
+            grid.forEach(function (grid) {
+                grid.style.backgroundColor = 'white'
+            })
+        });
 
 
         function clearContainer() {
             while (container.firstChild) {
                 container.removeChild(container.firstChild);
             }
+        }
+        const numberOfSquares = 256;
+        for (let i = 0; i < numberOfSquares; i++) {
+                const grid = document.createElement('div');
+                grid.classList.add("square");
+
+                grid.addEventListener('click', function () {
+                grid.style.backgroundColor = 'black';
+                });
+            container.appendChild(grid);
         }
 
 

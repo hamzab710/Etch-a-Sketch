@@ -1,5 +1,6 @@
 :root {
     --square-width: 6.25%; /* Define a custom property for the square width */
+    --grid-backgroundColor : white;
   }
 
 #container {
@@ -34,8 +35,21 @@
     padding: 8px 20px;
     font-size: 20px;
     background-color: aqua;
+    width: 200px;
 }
 
 #restart:hover {
+    background-color: blueviolet;
+}
+
+#clear {
+    margin: 20px;
+    padding: 8px 20px;
+    font-size: 20px;
+    background-color: aqua;
+    width: 200px;
+}
+
+#clear:hover {
     background-color: blueviolet;
 }
