@@ -11,13 +11,18 @@
         <button id="restart">Change dinensions</button>
         <button id="clear">Clear</button>
     </div>
+    <div class="input">
+        <input type="number" class="dimensions" min="0" max="100">
+        <input type="button" class="submit" value="Submit">
+    </div>
     <div id="container"></div>
 
     <script>
         const container = document.getElementById('container');
         const restart = document.getElementById('restart');
         const clear = document.getElementById('clear');
-
+        const dimensions = document.querySelector('.dimensions');
+        const submit = document.querySelector('.submit');
 
         clear.addEventListener('click',function () {
             const grid = document.querySelectorAll('.square');
@@ -49,32 +54,26 @@
         }
 
         function givePrompt() {
-            let userInput = prompt("Please enter a number:");
-            let userNumber = parseInt(userInput);
+            const userNumber = Number(dimensions.value);
             const numberOfSquares =  userNumber * userNumber;
-            if (numberOfSquares > 10000) {
-                alert("The limit is 100")
-            } else {
-                for (let i = 0; i < numberOfSquares; i++) {
-                    const grid = document.createElement('div');
-                    grid.classList.add("square");
+            for (let i = 0; i < numberOfSquares; i++) {
+                const grid = document.createElement('div');
+                grid.classList.add("square");
 
-                    grid.addEventListener('click', function () {
-                    grid.style.backgroundColor = 'black';
-                    });
+                grid.addEventListener('click', function () {
+                grid.style.backgroundColor = 'black';
+                });
 
-                container.appendChild(grid);
-                }
+            container.appendChild(grid);
             }
-            updateSquareWidth(`${100 / Math.sqrt(numberOfSquares)}%`);
+        updateSquareWidth(`${100 / Math.sqrt(numberOfSquares)}%`);
         }
 
-        restart.addEventListener('click',function () {
+        submit.addEventListener('click',function () {
             clearContainer();
             givePrompt();
         });
-
-
+        
     </script>
 </body>
 
