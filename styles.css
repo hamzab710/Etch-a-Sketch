@@ -28,6 +28,7 @@
 .button-container {
     display: flex;
     justify-content: center;
+    align-items: start;
 }
 
 #restart {
@@ -52,4 +53,17 @@
 
 #clear:hover {
     background-color: blueviolet;
+}
+
+.input {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+
+.submit {
+    padding: 6px 15px;
+    font-size: 15px;
+    background-color: aqua;
+    width: 80px;
 }
