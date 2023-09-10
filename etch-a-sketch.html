@@ -52,15 +52,19 @@
             let userInput = prompt("Please enter a number:");
             let userNumber = parseInt(userInput);
             const numberOfSquares =  userNumber * userNumber;
-            for (let i = 0; i < numberOfSquares; i++) {
-                const grid = document.createElement('div');
-                grid.classList.add("square");
+            if (numberOfSquares > 10000) {
+                alert("The limit is 100")
+            } else {
+                for (let i = 0; i < numberOfSquares; i++) {
+                    const grid = document.createElement('div');
+                    grid.classList.add("square");
 
-                grid.addEventListener('click', function () {
-                grid.style.backgroundColor = 'black';
-                });
+                    grid.addEventListener('click', function () {
+                    grid.style.backgroundColor = 'black';
+                    });
 
-            container.appendChild(grid);
+                container.appendChild(grid);
+                }
             }
             updateSquareWidth(`${100 / Math.sqrt(numberOfSquares)}%`);
         }
