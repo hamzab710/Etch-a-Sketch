@@ -45,9 +45,17 @@
                 const grid = document.createElement('div');
                 grid.classList.add("square");
 
-                grid.addEventListener('click', function () {
+                let mouseDown = false;
+                document.body.onmousedown = () => (mouseDown = true);
+                document.body.onmouseup = () => (mouseDown = false);
+
+                grid.addEventListener('mouseover', function () {
                 grid.style.backgroundColor = 'black';
                 });
+                grid.addEventListener('mousedown', function () {
+                grid.style.backgroundColor = 'black';
+                });
+
             container.appendChild(grid);
         }
 
@@ -63,8 +71,14 @@
                 const grid = document.createElement('div');
                 grid.classList.add("square");
 
-                grid.addEventListener('click', function () {
-                grid.style.backgroundColor = 'black';
+                grid.addEventListener('mousedown', function () {
+                    grid.style.backgroundColor = 'black';
+                    });
+
+                grid.addEventListener('mouseover', function () {
+                    if (event.buttons === 1) {
+                        grid.style.backgroundColor = 'black';
+                    }
                 });
 
             container.appendChild(grid);
