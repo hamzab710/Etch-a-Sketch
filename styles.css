@@ -29,27 +29,20 @@
     align-items: start;
 }
 
-#restart {
+#restart,
+#clear,
+.eraser {
     margin: 20px;
     padding: 8px 20px;
     font-size: 20px;
     background-color: aqua;
     width: 200px;
+    height: 70px;
 }
 
-#restart:hover {
-    background-color: blueviolet;
-}
-
-#clear {
-    margin: 20px;
-    padding: 8px 20px;
-    font-size: 20px;
-    background-color: aqua;
-    width: 200px;
-}
-
-#clear:hover {
+#restart:hover,
+#clear:hover,
+.eraser:hover {
     background-color: blueviolet;
 }
 
