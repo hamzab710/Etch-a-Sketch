@@ -4,6 +4,7 @@ const clear = document.getElementById('clear');
 const dimensions = document.querySelector('.dimensions');
 const submit = document.querySelector('.submit');
 const eraser = document.querySelector('.eraser');
+const rainbow = document.getElementById('rainbow');
 
 function clearContainer() {
     while (container.firstChild) {
@@ -93,4 +94,27 @@ function erase() {
     })
 }
 
-eraser.addEventListener('click', erase)
+eraser.addEventListener('click', erase);
+
+function makeRainbow() {
+    const grid = document.querySelectorAll('.square');
+    grid.forEach(function (grid) {
+        grid.addEventListener('mousedown', function () {
+            let randomR = Math.floor(Math.random() * 256);
+            let randomB = Math.floor(Math.random() * 256);
+            let randomG = Math.floor(Math.random() * 256);
+            grid.style.backgroundColor = `rgb(${randomR},${randomB},${randomG})`;
+            });
+    
+        grid.addEventListener('mouseover', function (event) {
+            if (event.buttons === 1) {
+                let randomR = Math.floor(Math.random() * 256);
+                let randomB = Math.floor(Math.random() * 256);
+                let randomG = Math.floor(Math.random() * 256);
+                grid.style.backgroundColor = `rgb(${randomR},${randomB},${randomG})`;
+                }
+        });
+    })
+}
+
+rainbow.addEventListener('click', makeRainbow);
