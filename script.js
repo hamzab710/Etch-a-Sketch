@@ -6,7 +6,7 @@ const dimensionsLabel = document.querySelector('label[for=dimensions]');
 const rainbow = document.getElementById('rainbow');
 const colorInput = document.getElementById('colors');
 
-dimensionsLabel.textContent = `${dimensions.value} X ${dimensions.value}`
+dimensionsLabel.textContent = `Resolution: ${dimensions.value} X ${dimensions.value}`
 
 const numberOfSquares = 256;
 for (let i = 0; i < numberOfSquares; i++) {
@@ -66,7 +66,7 @@ function erase() {
             grid.style.backgroundColor = 'white';
             });
     
-        grid.addEventListener('mouseover', function (event) {
+        grid.addEventListener('mouseover', function () {
             if (event.buttons === 1) {
                 grid.style.backgroundColor = 'white';
                 }
@@ -112,7 +112,7 @@ function changeColor() {
 dimensions.addEventListener('input',function(event) {
     clearContainer();
     givePrompt();
-    dimensionsLabel.textContent = `${dimensions.value} X ${dimensions.value}`
+    dimensionsLabel.textContent = `Resolution: ${dimensions.value} X ${dimensions.value}`
 });
 
 clear.addEventListener('click',function () {

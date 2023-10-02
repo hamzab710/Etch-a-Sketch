@@ -1,16 +1,41 @@
 :root {
-    --square-width: 6.25%; /* Define a custom property for the square width */
+    --square-width: 6.25%;
     --grid-backgroundColor : white;
+    --game-font: 'PressStart2PRegular' 'GameOverRegular';
+    --system-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
 body {
-    display: flex;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: bisque;
+    font-family: var(--system-font)
 }
+
+header {
+    margin: 1rem auto 3rem auto;
+    text-align: center;
+    font-family: var(--game-font) var(--system-font);
+    font-size: 5rem;
+    font-weight: 600;
+    color: brown;
+}
+
+h2 {
+    margin: -2rem auto 1rem auto;
+    font-family: var(--game-font) var(--system-font);
+    font-size: 2rem;
+    font-weight: 600;
+    color: brown;
+}
+
+main {
+    display: flex;
+}
+
+
 #container {
     display: flex;
     flex-wrap: wrap;
-    width: min(80%,900px);
+    width: min(70%,600px);
     aspect-ratio: 1;
     justify-content: center;
     align-items: center;
@@ -20,21 +45,34 @@ body {
 }
 
 .input-container {
+    background-color: antiquewhite;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-content: flex-start;
+    align-items: center;
+    border: solid black 2px;
+    width: 300px;
+    margin-left: 100px;
+    border-radius: 1rem;
 }
 
+input {
+    display: block;
+    margin: 0 auto;
+}
 #clear {
     width: 6rem;
     height: 3rem;
     border-radius: 1rem;
-    font-size: 1.5rem;
+    background-color: bisque;
 }
 
-label {
+label,
+#clear {
     font-size: 1.5rem;
+    font-family: 'CursiveSerifBook', var(--system-font);
+    font-style: italic;
+    font-weight: 600;
 }
 
 
@@ -59,4 +97,19 @@ label {
 #colors::-webkit-color-swatch {
     border-radius: 1.5rem;
     border: none;
+}
+
+footer {
+    background-color: inherit;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 7rem;
+}
+
+.git-icon {
+    height: 1.5rem;
+    width: auto;
+    display: inline;
+    position: relative;
+    top: 3px;
 }
